@@ -238,7 +238,7 @@ public class Boss : MonoBehaviour
         currentRock = Instantiate(rockPrefab);
         Vector3 offset = isLeft ? rockOffset_left : rockOffset_right;
         currentRock.transform.position = transform.position + offset;
-        currentRock.GetComponent<Rigidbody2D>().velocity = rockspeed * (playerTransform.position - transform.position).normalized;
+        currentRock.GetComponent<Rigidbody2D>().linearVelocity = rockspeed * (playerTransform.position - transform.position).normalized;
     }
 
     
