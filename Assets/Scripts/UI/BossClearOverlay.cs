@@ -37,45 +37,7 @@ namespace Platformer.UI
             panelImage.color = new Color(0f, 0f, 0f, 0.75f);
             StretchToParent(panel.GetComponent<RectTransform>());
 
-            var title = CreateUIObject("Title", panel.transform);
-            var titleText = title.AddComponent<Text>();
-            titleText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-            titleText.text = "Thanks for playing!";
-            titleText.alignment = TextAnchor.MiddleCenter;
-            titleText.fontSize = 72;
-            titleText.color = Color.white;
-
-            var titleRect = title.GetComponent<RectTransform>();
-            titleRect.anchorMin = new Vector2(0.5f, 0.66f);
-            titleRect.anchorMax = new Vector2(0.5f, 0.66f);
-            titleRect.pivot = new Vector2(0.5f, 0.5f);
-            titleRect.sizeDelta = new Vector2(1100f, 180f);
-            titleRect.anchoredPosition = Vector2.zero;
-
-            var buttonObject = CreateUIObject("BackToMainButton", panel.transform);
-            var buttonImage = buttonObject.AddComponent<Image>();
-            buttonImage.color = new Color(0.95f, 0.95f, 0.95f, 1f);
-
-            var button = buttonObject.AddComponent<UnityEngine.UI.Button>();
-            button.onClick.AddListener(BackToMain);
-
-            var buttonRect = buttonObject.GetComponent<RectTransform>();
-            buttonRect.anchorMin = new Vector2(0.5f, 0.4f);
-            buttonRect.anchorMax = new Vector2(0.5f, 0.4f);
-            buttonRect.pivot = new Vector2(0.5f, 0.5f);
-            buttonRect.sizeDelta = new Vector2(360f, 100f);
-            buttonRect.anchoredPosition = Vector2.zero;
-
-            var buttonLabel = CreateUIObject("Label", buttonObject.transform);
-            var labelText = buttonLabel.AddComponent<Text>();
-            labelText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-            labelText.text = "Back to Main";
-            labelText.alignment = TextAnchor.MiddleCenter;
-            labelText.fontSize = 36;
-            labelText.color = new Color(0.1f, 0.1f, 0.1f, 1f);
-            StretchToParent(buttonLabel.GetComponent<RectTransform>());
-
-            Debug.Log("BossClearOverlay.BuildUI");
+            Debug.Log("BossClearOverlay.BuildUI (OnGUI mode)");
         }
 
         void OnGUI()
